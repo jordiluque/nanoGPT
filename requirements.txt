@@ -1,0 +1,6 @@
+numpy
+datasets
+tiktoken
+wandb
+tqdm
+networkx
