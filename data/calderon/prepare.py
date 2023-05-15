@@ -55,9 +55,9 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     # Example using shakespeare
     ds = Dataset()
-    if not os.path.exists('54436-0-clean.txt'):
+    if not os.path.exists('cap1-4.txt'):
         ds.fetch()
-        ds.save('54436-0-clean.txt')
-    ds.load('54436-0-clean.txt')
+        ds.save('cap1-4.txt')
+    ds.load('cap1-4.txt')
     ds.parse()
     ds.export('./')
