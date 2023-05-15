@@ -14,8 +14,9 @@ from dataclasses import dataclass
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+from codecarbon import track_emissions
 
-# @torch.jit.script # good to enable when not using torch.compile, disable when using (our default)
+@torch.jit.script # good to enable when not using torch.compile, disable when using (our default)
 def new_gelu(x):
     """
     Implementation of the GELU activation function currently in Google BERT repo (identical to OpenAI GPT).
@@ -173,7 +174,8 @@ class GPT(nn.Module):
                 torch.nn.init.zeros_(module.bias)
         elif isinstance(module, nn.Embedding):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
-
+            
+    @track_emissions()
     def forward(self, idx, targets=None):
         device = idx.device
         b, t = idx.size()
