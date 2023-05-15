@@ -36,8 +36,8 @@ from model import GPTConfig, GPT
 # -----------------------------------------------------------------------------
 # default config values designed to train a gpt2 (124M) on OpenWebText
 # I/O
-tracker = EmissionsTracker()
-tracker.start()
+#tracker = EmissionsTracker()
+#tracker.start()
 out_dir = 'out'
 eval_interval = 2000
 log_interval = 1
@@ -336,5 +336,5 @@ while True:
 if ddp:
     destroy_process_group()
 
-emissions: float = tracker.stop()
-print(emissions)
+#emissions: float = tracker.stop()
+#print(emissions)
