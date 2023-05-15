@@ -41,7 +41,7 @@ pyenv activate nanoGPT
 ## Cloninig codecarbone
 pip install codecarbon
 ! codecarbon init
-echo "log_level = DEBUG
+echo "log_level = CRITICAL
 save_to_api = True" >> .codecarbon.config
 
 ## Cloning nanoGPT repo
