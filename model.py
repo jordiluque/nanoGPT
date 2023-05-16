@@ -14,7 +14,7 @@ from dataclasses import dataclass
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
-from codecarbon import track_emissions
+#from codecarbon import track_emissions
 
 @torch.jit.script # good to enable when not using torch.compile, disable when using (our default)
 def new_gelu(x):
